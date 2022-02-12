@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AssignMessage-SavePathSuffix" version="SHA-512:ff3ee033cc70afff8c7da1f9a44f4e84ed072be54db1a535b469e85f6a5296086535469539708b9546ab4e11ffff1770fcac49d72065780e67ec423423e5f221"/>
+        <VersionInfo resourceName="DisablePathCopy" version="SHA-512:0e7408951eb9aa6268793420b0c9b6c0d0e7be24900dbd16e1cf58f279f77de4b102eb47ad15268a1422494c36cd9531eebe1b78843e8ab5b256a5787ebd01d8"/>
+        <VersionInfo resourceName="Extract-Request-Parameters" version="SHA-512:cdf49f6e12414a0ebeec6a65c6285a3c402a6f99f107cbc67bcc2a16e3fd77fb2ff6c7f4416b2656a95512ef777c9412c0f887f4003fc2264437a73bbfcfb748"/>
+        <VersionInfo resourceName="FC-CORS-Postflow" version="SHA-512:269fd4fb9eb73c3cb67a7889f663d7631440ca89fa886a9cf916c1eb53f26335ca383c4f7a88e44b5ce85e6d61049612a7770555bfff23f642e009c7367555fc"/>
+        <VersionInfo resourceName="FC-CORS-Preflow" version="SHA-512:12873ec1ea341ff1f3e425706b7b1e781b9a88f9ed80bab1772bc50aea0adf244cb8527fb4d22c0c9ce874b7cc51d106b9d85762ce36930907241e5a2715f58a"/>
+        <VersionInfo resourceName="JSON-Threat-Protection" version="SHA-512:c785d0b65ec138a03581e7efaba515ea0ee5dd2bef6c3ae6be50f908fa12530a9dca0da87530a3e6c0fb2e00f14b8e5c1346cedfeee71972104f3853fc10cab6"/>
+        <VersionInfo resourceName="JSON-to-XML" version="SHA-512:d0b45b514fe148e7492663b010b3e73742862855ec5385de09c150dae92f63fbb4a575c0d5d48f6dd6f2d66f2b5c2b856b5d363e4cc23f283931c88178827211"/>
+        <VersionInfo resourceName="Modify-Request-Data" version="SHA-512:183bd46ba3c296303c6cdfd3f538dca9b69fb8a6ffd7590b2c1cc1a03bb846edc9b2b9021a76d764075ab2693c871ebdfd2cf68ac60930913d781e64bffc28f7"/>
+        <VersionInfo resourceName="UpdateTargetUrl" version="SHA-512:fba9c48f1d323d18d939f23a7c8ffcb184a5304cf2b785074295d553e0f03fe60cc93e7850943483e1e3a56615f328eb13c3099deaf9dff5dd94fe471ca45e6c"/>
+        <VersionInfo resourceName="XML-Threat-Protection" version="SHA-512:2be306addbc66eab8d192276389d4b01b0f7e3394ff52b7fd711580742872f3dc82c0fb351edcb6c83264f20cad99c85952af2eee6303d1f3a77fdf6600c6303"/>
+        <VersionInfo resourceName="XML-to-JSON" version="SHA-512:5bf9acef36f01c3a7c5f72ae87f76e81d67b8dc3d51cac4ce55ad07b876d8a5e3815d62e9006e0f2e2e41f2a2aa91cd22386fa1ddff738ece303d8ec8ffe7187"/>
+        <VersionInfo resourceName="add-cors" version="SHA-512:08cc2ef69b08ee73467f7be74960047faa490fcc61ebba744cc1436358ed8068b052ee8c6e101ad00a5d54633c92d8195f7ed624372a59614265f0e515a1b5a1"/>
+        <VersionInfo resourceName="impose-quota" version="SHA-512:34215257012fa998b2b8210bcf0348ac20f041dc2f15b3db9bd9d2830cb2d0df59e58cefa4dfa3db1359c273fec2fa41697599c446912eaaec3ef0d9835df99e"/>
+        <VersionInfo resourceName="remove-header-authorization" version="SHA-512:bb51e553b4b66ee4313fbfc0eaa76f08f3db66f9bd05cce9a1dc6542bada0501291719372fb4468a0b7f85ecceaaf0f8a0a397560a14b05f32e87d95423befb7"/>
+        <VersionInfo resourceName="request-mapping" version="SHA-512:a34c0d9342414480c9334d0e68a917e3e0bd4ebe3ce15012ecd25c950723a1cf4b2b6b207224c8e6cc2290abfd4568dd72357d928c2d1677b696e4e1a70e1ef7"/>
+        <VersionInfo resourceName="verify-oauth-v2-access-token" version="SHA-512:1a1dd21f358f4d2a5e7778c4c237fd0eb5f2836e8d4b27c54b00be2fed60770bbcf47ac4e949af6995849ae0f1adadbf69e1239e9641b774b907ac07af8d6e82"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:856cacdb0e026e89516e9aaa98fe008f289578341803b088c90e467d0b8f7cb2c83ed66b8e99eec05cefdd9e9bbc87a8b292473cfbad8f0557d4448014b2463f"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://UpdateTargetUrl.js" version="SHA-512:e85a2d58459d8e8e7d686b780abf301cf4ac24d8b768602e41dacc1a9163c1c5bcb382d93931fb706b903c9dd891aca416b753d79709eeab2ed58a6a0aa15219"/>
+        <VersionInfo resourceName="jsc://request-mapping.js" version="SHA-512:fee7cd913745c2781dad4811d7db7fcf04156394f13b6c02649338518cefdd868e757a3bfbf18fef242b1c31005b80a92bc4bb1aea21651c245e31bd7ea18338"/>
+        <VersionInfo resourceName="openapi://association.json" version="SHA-512:7c4f28d6858da4076c7e93fd6e3b15a77086ec4c1ab7b9ee8e7fc754e8f871ffe70a6f6b25b943b0872caa25c995eb8ca19c2a549f8b1cb417565103810c539e"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:51169ec0a6cc55573bea53195b7cbf8f70127d3c3e2083b1f94ee1c71f66b9a05d6f183e30aa940ec0927c42305ac2c80b712d53e3cab3fe20d2ad25169b07ba"/>
+    </TargetEndpoints>
+</Manifest>

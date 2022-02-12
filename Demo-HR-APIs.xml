@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="Demo-HR-APIs">
+    <Basepaths>/demo/v1</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1530054747157</CreatedAt>
+    <CreatedBy>pankaj.saini@neosalpha.com</CreatedBy>
+    <Description>This API supports all services required to manage Employees on HR system</Description>
+    <DisplayName>Demo-HR-APIs</DisplayName>
+    <LastModifiedAt>1644675357758</LastModifiedAt>
+    <LastModifiedBy>mg@neosalpha.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:f1144dbc7550a144cb7f47939edd32ae829f4f9ecb4074f4d41957f9c5b6db48cf31cdff115823bd39ca2b60204ef250cb0c9dea360b2d3928df103e978be381:ap-northeast-1</ManifestVersion>
+    <Policies>
+        <Policy>AssignMessage-SavePathSuffix</Policy>
+        <Policy>DisablePathCopy</Policy>
+        <Policy>Extract-Request-Parameters</Policy>
+        <Policy>FC-CORS-Postflow</Policy>
+        <Policy>FC-CORS-Preflow</Policy>
+        <Policy>JSON-Threat-Protection</Policy>
+        <Policy>JSON-to-XML</Policy>
+        <Policy>Modify-Request-Data</Policy>
+        <Policy>UpdateTargetUrl</Policy>
+        <Policy>XML-Threat-Protection</Policy>
+        <Policy>XML-to-JSON</Policy>
+        <Policy>add-cors</Policy>
+        <Policy>impose-quota</Policy>
+        <Policy>remove-header-authorization</Policy>
+        <Policy>request-mapping</Policy>
+        <Policy>verify-oauth-v2-access-token</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+        <Resource>jsc://UpdateTargetUrl.js</Resource>
+        <Resource>jsc://request-mapping.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

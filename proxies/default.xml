@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="unauthorized">
+            <Step>
+                <Name>FC-CORS-Postflow</Name>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>FC-CORS-Preflow</Name>
+                <Condition>(request.verb = "OPTIONS")</Condition>
+            </Step>
+            <Step>
+                <Name>verify-oauth-v2-access-token</Name>
+                <Condition>(request.verb != "OPTIONS")</Condition>
+            </Step>
+            <Step>
+                <Name>remove-header-authorization</Name>
+                <Condition>(request.verb != "OPTIONS")</Condition>
+            </Step>
+            <Step>
+                <Name>AssignMessage-SavePathSuffix</Name>
+                <Condition>(request.verb != "OPTIONS")</Condition>
+            </Step>
+            <Step>
+                <Condition>request.header.Content-Type = "application/xml"</Condition>
+                <Name>XML-to-JSON</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Condition>request.header.accept = "application/xml"</Condition>
+                <Name>JSON-to-XML</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="post /employees">
+            <Description>Creates an Employees</Description>
+            <Request>
+                <Step>
+                    <Condition>request.header.Content-Type = "application/json"</Condition>
+                    <Name>JSON-Threat-Protection</Name>
+                </Step>
+                <Step>
+                    <Name>request-mapping</Name>
+                </Step>
+                <Step>
+                    <Name>Modify-Request-Data</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/employees") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="get /employees">
+            <Description>Retrieves all Employee records</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/employees") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get /employees/{employeeID}">
+            <Description>Retrieves an Employee record</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/employees/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="delete /employees/{employeeID}">
+            <Description>Deletes an Employee record</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/employees/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="post /contractors">
+            <Description>Creates an Employees</Description>
+            <Request>
+                <Step>
+                    <Name>impose-quota</Name>
+                </Step>
+                <Step>
+                    <Condition>request.header.Content-Type = "application/json"</Condition>
+                    <Name>JSON-Threat-Protection</Name>
+                </Step>
+                <Step>
+                    <Name>request-mapping</Name>
+                </Step>
+                <Step>
+                    <Name>Modify-Request-Data</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/contractors") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="get /contractors">
+            <Description>Retrieves all Employee records</Description>
+            <Request>
+                <Step>
+                    <Name>impose-quota</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/contractors") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get /contractors/{employeeID}">
+            <Description>Retrieves an Employee record</Description>
+            <Request>
+                <Step>
+                    <Name>impose-quota</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/contractors/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="delete /contractors/{employeeID}">
+            <Description>Deletes an Employee record</Description>
+            <Request>
+                <Step>
+                    <Name>impose-quota</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/contractors/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/demo/v1</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
